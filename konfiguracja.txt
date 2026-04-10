@@ -1,4 +1,2 @@
 Mikołaj Tchorek
 miko.tchorek@gmail.com
-https://github.com/kejepsi1/SO_Project_Git.git
-https://github.com/kejepsi1/FirstMachineLearning.git
