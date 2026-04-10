@@ -1,13 +1,11 @@
 #!/bin/bash
 
+echo "$(zenity --entry --text "Podaj imie i nazwisko" --title "Dodawanie nazwy")" > konfiguracja.txt
+echo "$(zenity --entry --text "Podaj e-mail" --title "Dodawanie maila")" >> konfiguracja.txt
 
-
-name=$(zenity --entry --text "Podaj imie i nazwisko" --title "Dodawanie nazwy") >> konfiguracja.txt
-email=$(zenity --entry --text "Podaj e-mail" --title "Dodawanie maila") > konfiguracja.txt
-
-git config --global user.name "$name"
-git config --global user.email "$email"
+git config --global user.name "Mikołaj Tchorek"
+git config --global user.email "miko.tchorek@gmail.com"
 
 while zenity --question --text "Czy chcesz dodać kolejne repozytorium?" --title "Dodawanie repozytorium"; do
-    nowe_repo=$(zenity --entry --text "Podaj link do repozytorium" --title "Link do repo")
+    echo "$(zenity --entry --text "Podaj link do repozytorium" --title "Link do repo")" >> konfiguracja.txt
 done
