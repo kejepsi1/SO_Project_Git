@@ -1,0 +1,36 @@
+NAZWA
+       Menedżer Lokalnego Repozytorium Git
+
+OPIS
+       Skrypt służy do automatyzacji procesu konfiguracji lokalnego środowiska Git
+       oraz masowego pobierania lub aktualizowania zdalnych repozytoriów.
+       Program posiada interfejs graficzny zrealizowany przy pomocy biblioteki Zenity.
+
+       Działanie programu:
+       1. Skrypt prosi użytkownika o podanie imienia i adresu e-mail.
+       2. Wprowadzone dane są używane do konfiguracji zmiennych globalnych Git
+          (user.name oraz user.email).
+       3. Użytkownik podaje linki URL do repozytoriów, które chce pobrać.
+       4. Wszystkie dane są zapisywane w lokalnym pliku 'konfiguracja.txt'.
+       5. Skrypt analizuje wprowadzane linki. Jeśli repozytorium znajduje się już
+          na dysku lokalnym, wywoływane jest polecenie 'git pull'. W przeciwnym
+          razie skrypt klonuje repozytorium ('git clone').
+       6. W przypadku błędnego linku program informuje użytkownika o niepowodzeniu
+          i kontynuuje działanie.
+
+PLIKI (MODUŁY)
+       - menedzer.sh        : Główny plik wykonywalny obsługujący opcje wejścia.
+       - main.sh : Biblioteka funkcji z logiką operacji na systemie Git oraz GUI.
+       - konfiguracja.txt   : Plik generowany automatycznie, przechowujący stan konfiguracji.
+
+SKŁADNIA
+       ./menedzer.sh [OPCJE]
+
+OPCJE (getopts)
+       Uruchomienie skryptu bez żadnych parametrów uruchamia główny interfejs graficzny.
+
+       -h     Wyświetla skrócony komunikat pomocy i kończy działanie programu.
+       -v     Wyświetla aktualną wersję narzędzia i kończy działanie programu.
+
+AUTOR
+       Mikołaj Tchorek
