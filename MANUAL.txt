@@ -28,7 +28,7 @@ SKŁADNIA
 
 OPCJE (getopts)
        Uruchomienie skryptu bez żadnych parametrów uruchamia główny interfejs graficzny.
-
+       -m     Wyświetla manuala
        -h     Wyświetla skrócony komunikat pomocy i kończy działanie programu.
        -v     Wyświetla aktualną wersję narzędzia i kończy działanie programu.
 

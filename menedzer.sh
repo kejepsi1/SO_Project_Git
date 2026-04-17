@@ -4,8 +4,12 @@ source $(dirname $0)/main.sh
 
 WERSJA="1.0.0"
 
-while getopts "hv" WYBOR; do
+while getopts "mhv" WYBOR; do
     case $WYBOR in
+        m)
+            cat "$(dirname "$0")/MANUAL.txt"
+            exit 0
+            ;;
         h)
             echo "=========================================="
             echo "       MENEDŻER REPOZYTORIÓW GIT"
@@ -13,6 +17,7 @@ while getopts "hv" WYBOR; do
             echo "Użycie: ./menedzer.sh [OPCJE]"
             echo ""
             echo "Opcje:"
+            echo "  -m    Wyświetla manuala"
             echo "  -h    Wyświetla ten komunikat pomocy (Help)"
             echo "  -v    Wyświetla wersję programu (Version)"
             echo ""
@@ -25,7 +30,7 @@ while getopts "hv" WYBOR; do
             ;;
         \?)
             echo "Błąd. Nieznana opcja."
-            echo "Aby uzyskać pomoc wpisz "./menedzer.sh"."
+            echo "Aby uzyskać pomoc wpisz './menedzer.sh -h'."
             exit 1
             ;;
     esac
